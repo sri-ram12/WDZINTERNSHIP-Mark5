@@ -1,0 +1,163 @@
+.hero-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.78) 45%,
+    transparent 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Left side: product name + subtitle */
+.hero-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-pill {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5f5f7;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-product-title {
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 45%, #a4a4af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-product-subtitle {
+  font-size: 15px;
+  color: #9c9ca3;
+  max-width: 420px;
+}
+
+/* Right side: price + CTA */
+.hero-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a0a0aa;
+}
+
+.meta-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f5f5f7;
+}
+
+.hero-cta {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #e3e3ea 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.95);
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8);
+}
+
+/* Make room for fixed header in your page layout */
+.app {
+  padding-top: 120px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hero-header-inner {
+    padding: 14px 20px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-product-title {
+    font-size: 34px;
+  }
+
+  .hero-product-subtitle {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .hero-header-meta {
+    align-self: stretch;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-header-inner {
+    padding: 12px 16px 8px;
+  }
+
+  .hero-product-title {
+    font-size: 26px;
+  }
+
+  .hero-product-subtitle {
+    font-size: 13px;
+  }
+
+  .hero-cta {
+    padding: 7px 16px;
+    font-size: 12px;
+  }
+
+  .app {
+    padding-top: 96px;
+  }
+}
